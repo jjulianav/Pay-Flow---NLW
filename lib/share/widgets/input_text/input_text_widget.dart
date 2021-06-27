@@ -1,3 +1,4 @@
+import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 
 import 'package:pay_flow/share/themes/app_colors.dart';
@@ -23,46 +24,49 @@ class InpuTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
-      child: Column(
-        children: [
-          TextFormField(
-            initialValue: initialValue,
-            validator: validator,
-            controller: controller,
-            onChanged: onChanged,
-            style: TextStyles.input,
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.zero,
-              labelText: label,
-              labelStyle: TextStyles.input,
-              icon: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 18),
-                    child: Icon(
-                      iconData,
-                      color: AppColors.primary,
+    return AnimatedCard(
+      direction: AnimatedCardDirection.left,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 16),
+        child: Column(
+          children: [
+            TextFormField(
+              initialValue: initialValue,
+              validator: validator,
+              controller: controller,
+              onChanged: onChanged,
+              style: TextStyles.input,
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.zero,
+                labelText: label,
+                labelStyle: TextStyles.input,
+                icon: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 18),
+                      child: Icon(
+                        iconData,
+                        color: AppColors.primary,
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: 1,
-                    height: 48,
-                    color: AppColors.stroke,
-                  ),
-                ],
+                    Container(
+                      width: 1,
+                      height: 48,
+                      color: AppColors.stroke,
+                    ),
+                  ],
+                ),
+                border: InputBorder.none,
               ),
-              border: InputBorder.none,
             ),
-          ),
-          Divider(
-            height: 1,
-            thickness: 1,
-            color: AppColors.stroke,
-          ),
-        ],
+            Divider(
+              height: 1,
+              thickness: 1,
+              color: AppColors.stroke,
+            ),
+          ],
+        ),
       ),
     );
   }

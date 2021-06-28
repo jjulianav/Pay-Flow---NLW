@@ -16,26 +16,33 @@ class BoletoTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedCard(
       direction: AnimatedCardDirection.right,
-      child: ListTile(
-        contentPadding: EdgeInsets.zero,
-        title: Text(
-          data.name!,
-          style: TextStyles.titleListTile,
+      child: SingleChildScrollView(
+        child: ListTile(
+          contentPadding: EdgeInsets.zero,
+          title: Text(
+            data.name!,
+            style: TextStyles.titleListTile,
+          ),
+          subtitle: Text(
+            "Vence em ${data.dueData}",
+            style: TextStyles.captionBody,
+          ),
+          trailing: Text.rich(TextSpan(
+            text: "R\$ ",
+            style: TextStyles.trailingRegular,
+            children: [
+              TextSpan(
+                text: "${data.value!.toStringAsFixed(2)} \n",
+                style: TextStyles.trailingBold,
+              ),
+              TextSpan(
+                //text: "${data.isPaid}",
+                text: data.isPaid == null ? "Boleto pago" : "",
+                style: TextStyles.captionBody,
+              )
+            ],
+          )),
         ),
-        subtitle: Text(
-          "Vence em ${data.dueData}",
-          style: TextStyles.captionBody,
-        ),
-        trailing: Text.rich(TextSpan(
-          text: "R\$ ",
-          style: TextStyles.trailingRegular,
-          children: [
-            TextSpan(
-              text: "${data.value!.toStringAsFixed(2)}",
-              style: TextStyles.trailingBold,
-            ),
-          ],
-        )),
       ),
     );
   }

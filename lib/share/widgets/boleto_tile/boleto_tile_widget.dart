@@ -37,7 +37,7 @@ class BoletoTileWidget extends StatelessWidget {
               ),
               TextSpan(
                 //text: "${data.isPaid}",
-                text: data.isPaid == null ? "Boleto pago" : "",
+                text: data.isPaid == true ? "Boleto pago" : "",
                 style: TextStyles.captionBody,
               )
             ],

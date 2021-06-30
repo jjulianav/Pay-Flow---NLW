@@ -1,4 +1,3 @@
-import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:pay_flow/share/models/boleto_model.dart';
 import 'package:pay_flow/share/themes/app_colors.dart';

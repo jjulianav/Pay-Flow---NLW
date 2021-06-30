@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:pay_flow/share/themes/app_colors.dart';
 import 'package:pay_flow/share/themes/app_text_styles.dart';
-import 'package:pay_flow/share/widgets/divider_vertical/divider_vertical_widget.dart';
 import 'package:pay_flow/share/widgets/set_label_button/set_label_button.dart';
 
 class ButtonSheetWidget extends StatelessWidget {
